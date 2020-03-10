@@ -15,7 +15,7 @@ async def on_ready():
 
 @bot.command(name="hi", help="Says hello")
 async def say_hello(ctx):
-    await ctx.send(f"Hi {ctx.author.display_name}")
+    await ctx.send(f"Hello {ctx.author.display_name}")
 
 bot.run(TOKEN)
 
