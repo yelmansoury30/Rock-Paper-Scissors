@@ -16,8 +16,8 @@ async def on_ready():
 @bot.command(name="hi", help="Says hello")
 async def say_hello(ctx):
     box = discord.Embed(title="Help", description="a help box")
-    box.add_field(name="Field_1", value="Hi", inline=False)
-    box.add_field(name="Field_2", value="Bye", inline=False)
+    box.add_field(name="Field_1", value="Hi")
+    box.add_field(name="Field_2", value="Bye")
     #await ctx.send(f"Hello {ctx.author.display_name}")
     await ctx.send(embed=box)
 
