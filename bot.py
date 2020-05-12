@@ -4,8 +4,9 @@ import os
 import discord
 from discord.ext import commands
 
-
+TOKEN = os.getenv("DISCORD_TOKEN")
 client = discord.Client()
+
 
 @client.event
 async def on_ready():
@@ -24,6 +25,7 @@ async def on_message(message):
     if message.content.startswith('✂️'):
         await message.channel.send(tool)
 
+client.run(TOKEN)
 
 
 from random import randint
@@ -80,7 +82,7 @@ elif player == 's' and bot == 's':
 else:
     print('Artificial intelligence is not so intelligent after all.')
 
-client.run('DISCORD_TOKEN')
+
 
 
 
