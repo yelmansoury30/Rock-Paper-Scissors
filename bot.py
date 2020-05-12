@@ -4,28 +4,6 @@ import os
 import discord
 from discord.ext import commands
 
-TOKEN = os.getenv("DISCORD_TOKEN")
-client = discord.Client()
-
-
-@client.event
-async def on_ready():
-    print('{RockPaperScissorsBot} is awake'.format(client))
-
-@client.event
-async def on_message(message):
-    if message.author == client.user:
-        return
-    if message.content.startswith('!rps'):
-        await message.channel.send('Choose your weapon!')
-    if message.content.startswith('✊'):
-        await message.channel.send(tool)
-    if message.content.startswith('✋'):
-        await message.channel.send(tool)
-    if message.content.startswith('✂️'):
-        await message.channel.send(tool)
-
-client.run(TOKEN)
 
 
 from random import randint
@@ -83,6 +61,27 @@ else:
     print('Artificial intelligence is not so intelligent after all.')
 
 
+
+client = discord.Client()
+
+@client.event
+async def on_ready():
+    print('{RockPaperScissorsBot} is awake'.format(client))
+
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+    if message.content.startswith('!rps'):
+        await message.channel.send('Choose your weapon!')
+    if message.content.startswith('✊'):
+        await message.channel.send(tool)
+    if message.content.startswith('✋'):
+        await message.channel.send(tool)
+    if message.content.startswith('✂️'):
+        await message.channel.send(tool)
+
+client.run('DISCORD_TOKEN')
 
 
 
