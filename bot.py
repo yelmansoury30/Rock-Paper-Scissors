@@ -25,7 +25,7 @@ async def on_message(message):
         await message.channel.send(tool)
 
 
-
+client.run('NzA5NTA5NTE0ODk4MTc4MTE5.XrnVMg.qXK1BR7kdVb42yTf5OlLm8naQWw')
 
 from random import randint
 
@@ -82,7 +82,7 @@ else:
     print('Artificial intelligence is not so intelligent after all.')
 
 
-client.run('NzA5NTA5NTE0ODk4MTc4MTE5.XrnVMg.qXK1BR7kdVb42yTf5OlLm8naQWw')
+
 
 
 
