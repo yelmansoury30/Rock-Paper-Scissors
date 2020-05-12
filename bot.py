@@ -72,13 +72,17 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
+
     if message.content.startswith('!rps'):
         await message.channel.send('Choose your weapon!')
-    if message.content.startswith('✊'):
+
+    if message.content.startswith('r'):
         await message.channel.send(tool)
-    if message.content.startswith('✋'):
+
+    if message.content.startswith('p'):
         await message.channel.send(tool)
-    if message.content.startswith('✂️'):
+
+    if message.content.startswith('s️'):
         await message.channel.send(tool)
 
 client.run('DISCORD_TOKEN')
