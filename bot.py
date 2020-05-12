@@ -4,7 +4,7 @@ import os
 import discord
 from discord.ext import commands
 
-TOKEN = os.getenv("DISCORD_TOKEN")
+
 client = discord.Client()
 
 @client.event
@@ -16,10 +16,17 @@ async def on_message(message):
     if message.author == client.user:
         return
     if message.content.startswith('!rps'):
-        await message.channel.send('I am ready!')
+        await message.channel.send('Choose your weapon!')
+    if message.content.startswith('✊'):
+        await message.channel.send(tool)
+    if message.content.startswith('✋'):
+        await message.channel.send(tool)
+    if message.content.startswith('✂️'):
+        await message.channel.send(tool)
 
-client.run(TOKEN)
-"""
+
+
+
 from random import randint
 
 player = input('rock(r), paper(p), scissors(s)')
@@ -74,7 +81,8 @@ elif player == 's' and bot == 's':
 else:
     print('Artificial intelligence is not so intelligent after all.')
 
-"""
+
+client.run('NzA5NTA5NTE0ODk4MTc4MTE5.XrnVMg.qXK1BR7kdVb42yTf5OlLm8naQWw')
 
 
 
