@@ -1,26 +1,24 @@
 import os
 #from dotenv import load_dotenv
 
-
+import discord
 from discord.ext import commands
 
-#load_dotenv()
 TOKEN = os.getenv(DISCORD_TOKEN)
+client = discord.Client()
 
-bot = commands.Bot(command_prefix='!')
-
-@bot.listen()
+@client.event
 async def on_ready():
-    print('Bot loaded and ready!')
+    print('{RockPaperScissorsBot} is awake'.format(client))
 
-@bot.command(name="hi", help="Says hello")
-async def say_hello(ctx):
-    await ctx.send(f"Hello {ctx.Yelmansoury}")
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+    if message.content.startswith('!rps'):
+        await message.channel.send('I am ready!')
 
-bot.run(TOKEN)
-
-
-
+client.run(TOKEN)
 """
 from random import randint
 
@@ -75,9 +73,8 @@ elif player == 's' and bot == 's':
 
 else:
     print('Artificial intelligence is not so intelligent after all.')
+
 """
-
-
 
 
 
